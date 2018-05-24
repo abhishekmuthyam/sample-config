@@ -9,6 +9,9 @@ pipeline {
 			steps {
 				bat 'C:/Users/muthyama/build/PCF_CloudService_Script.bat'
 				echo "Will deploy to ${DEPLOY_ENV}_PCF_Properties"
+				echo "start yml"
+				bat 'C:/Users/muthyama/build/DEV1_PCF_Properties.yml'
+				echo "end yml"
                 		bat 'mvn --version'
 				
             }			     
