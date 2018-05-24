@@ -1,17 +1,21 @@
 pipeline {
     agent any
+	tools {
+        maven 'MAVEN_HOME'
+	jdk 'Java'	
+    }	
     stages {
+		stage ('Initialize') {
+			steps {
+                		bat 'mvn --version'
+				
+            }			     
+        }
         stage('Package') { 
             steps {
-                sh "mvn package -DskipTests" 
-            }
-        }
-	stage('DEPLOY') { 
-            steps {
-                 sh " https://api.run.pivotal.io -o myapplications -s development -u abhishekmuthyam -p Chinna23* --skip-ssl-validation"
-		 sh "cf push"
+			echo "Dev Build"
+			bat "mvn clean compile package -DskipTests"
             }
         }
     }
 }
-
