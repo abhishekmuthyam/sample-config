@@ -8,8 +8,8 @@ pipeline {
 		stage ('Check out and get property file') {
 			steps {
 				echo "start call batch script"
-				bat 'https://github.com/abhishekmuthyam/config-repo.git'
-				bat 'C:/Users/muthyama/build/PCF_CloudService_Script.bat'
+				bat 'https://github.com/abhishekmuthyam/config-repo/blob/master/PCF_CloudService_Script.bat'
+				//bat 'C:/Users/muthyama/build/PCF_CloudService_Script.bat'
 				echo "End call batch script"
                 		bat 'mvn --version'
 				
