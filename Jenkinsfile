@@ -7,7 +7,9 @@ pipeline {
     stages {
 	              stage('Load Property file from config server') {
                                    steps {
-                                         load "https://github.com/abhishekmuthyam/config-repo/blob/master/DEV1_PCF.properties"                                                                
+                                        // load "https://github.com/abhishekmuthyam/config-repo/blob/master/DEV1_PCF.properties"
+					 load "C:/Users/muthyama/build/DEV1_PCF.properties"
+					   
                                           }
                                 }
 	    
