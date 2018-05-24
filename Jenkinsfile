@@ -8,6 +8,7 @@ pipeline {
 		stage ('Initialize') {
 			steps {
 				bat 'C:/Users/muthyama/build/PCF_CloudService_Script.bat'
+				echo "Will deploy to ${DEPLOY_ENV}"
                 		bat 'mvn --version'
 				
             }			     
