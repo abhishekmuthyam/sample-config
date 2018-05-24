@@ -5,6 +5,12 @@ pipeline {
 	jdk 'Java'	
     }	
     stages {
+	              stage('Load Property file from config server') {
+                                   steps {
+                                         load "https://github.com/abhishekmuthyam/config-repo/blob/master/DEV1_PCF.properties"                                                                
+                                          }
+                                }
+	    
 		stage ('Check out and get property file') {
 			steps {
 				echo "start call batch script"
