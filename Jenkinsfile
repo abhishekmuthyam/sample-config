@@ -7,7 +7,7 @@ pipeline {
     stages {
 		stage ('Initialize') {
 			steps {
-				bat 'C:/Users/muthyama/build/PCF_CloudService_Script.sh'
+				bat 'C:/Users/muthyama/build/PCF_CloudService_Script.bat'
                 		bat 'mvn --version'
 				
             }			     
