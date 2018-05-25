@@ -12,7 +12,7 @@ pipeline {
 				//bat 'https://github.com/abhishekmuthyam/config-repo/blob/master/PCF_CloudService_Script.bat'
 				bat 'C:/Users/muthyama/build/PCF_CloudService_Script.bat'
 				echo "End call batch script"
-				echo ${PASSWORD}
+				echo ${DEPLOY_ENV}
                 		bat 'mvn --version'
 				
             }			     
