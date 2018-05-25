@@ -1,6 +1,6 @@
 pipeline {
-   /* agent any
-	tools {
+    agent any
+/*	tools {
         maven 'MAVEN_HOME'
 	jdk 'Java'	
     }	*/
@@ -8,13 +8,11 @@ pipeline {
 	           
 		stage ('Check out and get property file') {
 			steps {
-				echo "start call batch script"
-				//bat 'https://github.com/abhishekmuthyam/config-repo/blob/master/PCF_CloudService_Script.bat'
+				echo "start call batch script"				
 				bat 'C:/Users/muthyama/build/PCF_CloudService_Script.bat'
 				echo "End call batch script"
-				
-                		//bat 'mvn --version'
-				
+				//bat 'https://github.com/abhishekmuthyam/config-repo/blob/master/PCF_CloudService_Script.bat'
+                		//bat 'mvn --version'				
             }			     
         }
       /*  stage('Package') { 
