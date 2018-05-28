@@ -1,0 +1,7 @@
+---
+applications:
+- name: sample-config
+  memory: 200M
+  instances: 1
+  random-route: true
+  buildpack: staticfile_buildpack
