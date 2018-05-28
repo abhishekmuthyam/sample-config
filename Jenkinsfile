@@ -15,16 +15,16 @@ pipeline {
        		 stage('compile') {
 				steps {
 					load "${WORKSPACE}\\env.properties"
-					 echo "PCF_ENDPOINT_NAME: ${PCF_ENDPOINT_NAME}"
+					 echo "API_URL: ${API_URL}"
 				         echo "USER_NAME: ${USER_NAME}"
 					 echo "PASSWORD: ${PASSWORD}"
-					 echo "PCF_ORG: ${PCF_ORG}"
-				         echo "PCF_SPACE: ${PCF_SPACE}"						      
+					 echo "ORGANIZATION: ${ORGANIZATION}"
+				         echo "SPACE: ${SPACE}"						      
 				}
                         } 
 		stage('Package') { 
 					steps {
-						echo "${PCF_SPACE} Build"
+						echo "${SPACE} Build"
 						bat "mvn clean compile package -DskipTests"
             }
         } 
