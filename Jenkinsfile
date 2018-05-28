@@ -2,7 +2,7 @@ pipeline {
     agent any
 	tools {
         maven 'MAVEN_HOME'
-	jdk 'Java'	
+		jdk 'Java'	
     }	
     stages {	           
 		stage ('Check out and get property file') {
@@ -16,10 +16,10 @@ pipeline {
 				steps {
 					load "${WORKSPACE}\\env.properties"
 					 echo "API_URL: ${API_URL}"
-				         echo "USER_NAME: ${USER_NAME}"
+				    	 echo "USER_NAME: ${USER_NAME}"
 					 echo "PASSWORD: ${PASSWORD}"
-					 echo "ORGANIZATION: ${ORGANIZATION}"
-				         echo "SPACE: ${SPACE}"						      
+					echo "ORGANIZATION: ${ORGANIZATION}"
+				     	echo "SPACE: ${SPACE}"						      
 				}
                         } 
 		stage('Package') { 
@@ -30,9 +30,9 @@ pipeline {
         } 
 		stage('DEPLOY TO PCF') { 
            				 steps {
-               				 echo 'pivotal'
-             		 	 // bat "cf login -a api.run.pivotal.io -o myapplications -s dev -u abhishekmuthyam@gmail.com -p Chinna23* --skip-ssl-validation"
-				//bat "cf push sample-demo"
+               					echo 'pivotal'
+						bat "cf login -a ${API_URL} -o ${ORGANIZATION} -s ${SPACE} -u ${USER_NAME} -p ${PASSWORD} --skip-ssl-validation"
+						bat "cf push sample-config"
             }
         }			
     }
