@@ -1,7 +1,7 @@
 pipeline {
     agent any
 	tools {
-        maven 'MAVEN_HOME'
+       		maven 'MAVEN_HOME'
 		jdk 'Java'	
     }	
     stages {	           
@@ -15,22 +15,22 @@ pipeline {
        		 stage('compile') {
 				steps {
 					load "${WORKSPACE}\\env.properties"
-					 echo "API_URL: ${API_URL}"
-				    	 echo "USER_NAME: ${USER_NAME}"
-					 echo "PASSWORD: ${PASSWORD}"
+					echo "API_URL: ${API_URL}"
+				    	echo "USER_NAME: ${USER_NAME}"
+					echo "PASSWORD: ${PASSWORD}"
 					echo "ORGANIZATION: ${ORGANIZATION}"
 				     	echo "SPACE: ${SPACE}"						      
 				}
                         } 
 		stage('Package') { 
 					steps {
-						echo "${SPACE} Build"
+						echo "Build"
 						bat "mvn clean compile package -DskipTests"
             }
         } 
 		stage('DEPLOY TO PCF') { 
            				 steps {
-               					echo 'pivotal'
+               					echo "Pivotal Targeted space ${SPACE}"
 						bat "cf login -a ${API_URL} -o ${ORGANIZATION} -s ${SPACE} -u ${USER_NAME} -p ${PASSWORD} --skip-ssl-validation"
 						bat "cf push sample-config"
             }
