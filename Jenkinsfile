@@ -9,9 +9,9 @@ pipeline {
 		stage ('Build config repo files') {
 			steps {
 				echo "Config repo Start"				
-				if (env.BRANCH_NAME == 'master') {
+				//if (env.BRANCH_NAME == 'master') {
 					build '../sample-build.git'
-				}
+				//}
 				echo "Config repo Start"
             }			     
         }	
