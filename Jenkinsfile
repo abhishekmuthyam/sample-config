@@ -6,14 +6,18 @@ pipeline {
     }	
     stages {
 		
-	/*	stage('Checkout SCM') {
+		stage('Checkout SCM') {
 			steps {
-			echo "Start-checkout sample buid"	
-	    		git branch: 'master', credentialsId: 'abhishekmuthyam', url: "https://github.com/abhishekmuthyam/sample-build.git"
-			echo "End-checkout sample buid"	
+			dir('CalibrationResults') {
+				echo "Start-checkout sample buid"
+        			//git url: 'https://github.com/AtlasBID/CalibrationResults.git'
+    			}
+			//echo "Start-checkout sample buid"	
+	    		//git branch: 'master', credentialsId: 'abhishekmuthyam', url: "https://github.com/abhishekmuthyam/sample-build.git"
+			//echo "End-checkout sample buid"	
 			}
 			
-		} */
+		} 
 		
 		stage ('Check out and get property file') {
 			steps {
