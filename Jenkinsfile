@@ -33,7 +33,7 @@ pipeline {
 				     	echo "SPACE: ${SPACE}"						      
 				}
                         } 
-	/*	stage('Package') { 
+		stage('Package') { 
 					steps {
 						echo "Build"
 						bat "mvn clean compile package -DskipTests"
@@ -45,6 +45,6 @@ pipeline {
 						bat "cf login -a ${API_URL} -o ${ORGANIZATION} -s ${SPACE} -u ${USER_NAME} -p ${PASSWORD} --skip-ssl-validation"
 						bat "cf push sample-config"
             }
-        }	*/		
+        }			
     }
 }
