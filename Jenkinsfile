@@ -11,6 +11,9 @@ pipeline {
 			dir('CalibrationResults') {
 				echo "Start-checkout sample buid"
         			//git url: 'https://github.com/AtlasBID/CalibrationResults.git'
+				echo "Start-checkout sample buid"	
+	    		 git branch: 'master', credentialsId: 'abhishekmuthyam', url: "https://github.com/abhishekmuthyam/sample-build.git"
+			 echo "End-checkout sample buid"
     			}
 			//echo "Start-checkout sample buid"	
 	    		//git branch: 'master', credentialsId: 'abhishekmuthyam', url: "https://github.com/abhishekmuthyam/sample-build.git"
