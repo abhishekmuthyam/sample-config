@@ -9,7 +9,7 @@ pipeline {
 		stage('Checkout SCM') {
 			steps {
 			echo "Start-checkout sample buid"	
-	    		git branch: 'masterasdas', credentialsId: 'abhishekmuthyamsadsdd', url: "https://github.com/abhishekmuthyam/sample-build.git"
+	    		git branch: 'master', credentialsId: 'abhishekmuthyam', url: "https://github.com/abhishekmuthyam/sample-build.git"
 			echo "End-checkout sample buid"	
 			}
 			
