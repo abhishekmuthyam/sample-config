@@ -10,7 +10,7 @@ pipeline {
 			steps {
 				echo "Config repo Start"				
 				//if (env.BRANCH_NAME == 'master') {
-					build '../sample-build.git'
+					build 'https://github.com/abhishekmuthyam/sample-build.git'
 				//}
 				echo "Config repo Start"
             }			     
