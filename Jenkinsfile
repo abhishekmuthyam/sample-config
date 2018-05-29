@@ -8,9 +8,11 @@ pipeline {
 		
 		stage ('Build config repo files') {
 			steps {
-				echo "start call batch script"				
-				//bat 'C:/Users/muthyama/build/PCF_CloudService_Script.bat'
-				echo "End call batch script"		
+				echo "Config repo Start"				
+				if (env.BRANCH_NAME == 'master') {
+					build '../sample-build.git'
+				}
+				echo "Config repo Start"
             }			     
         }	
 		
