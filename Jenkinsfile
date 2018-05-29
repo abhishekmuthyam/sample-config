@@ -18,7 +18,7 @@ pipeline {
 		stage ('Check out and get property file') {
 			steps {
 				echo "start call batch script"				
-				bat '${WORKSPACE}\\PCF_CloudService_Script.bat'
+				bat 'C:/Program Files (x86)/Jenkins/workspace/sample-config/PCF_CloudService_Script.bat'
 				echo "End call batch script"		
             }			     
         }	
