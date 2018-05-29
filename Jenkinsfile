@@ -4,7 +4,16 @@ pipeline {
        		maven 'MAVEN_HOME'
 		jdk 'Java'	
     }	
-    stages {	           
+    stages {
+		
+		stage ('Build config repo files') {
+			steps {
+				echo "start call batch script"				
+				//bat 'C:/Users/muthyama/build/PCF_CloudService_Script.bat'
+				echo "End call batch script"		
+            }			     
+        }	
+		
 		stage ('Check out and get property file') {
 			steps {
 				echo "start call batch script"				
@@ -22,7 +31,7 @@ pipeline {
 				     	echo "SPACE: ${SPACE}"						      
 				}
                         } 
-		stage('Package') { 
+	/*	stage('Package') { 
 					steps {
 						echo "Build"
 						bat "mvn clean compile package -DskipTests"
@@ -34,6 +43,6 @@ pipeline {
 						bat "cf login -a ${API_URL} -o ${ORGANIZATION} -s ${SPACE} -u ${USER_NAME} -p ${PASSWORD} --skip-ssl-validation"
 						bat "cf push sample-config"
             }
-        }			
+        }	*/		
     }
 }
