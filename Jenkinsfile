@@ -20,7 +20,7 @@ pipeline {
 			steps {
 				echo "start call batch script"
 				//bat 'C:/Users/muthyama/build/PCF_CloudService_Script.bat'
-				bat 'PCF_CloudService_Script.bat'
+				bat 'configrepo/PCF_CloudService_Script.bat'
 				echo "End call batch script"		
             }			     
         }	
