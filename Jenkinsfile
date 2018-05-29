@@ -6,15 +6,12 @@ pipeline {
     }	
     stages {
 		
-		stage ('Build config repo files') {
-			steps {
-				echo "Config repo Start"				
-				//if (env.BRANCH_NAME == 'master') {
-					build 'https://github.com/abhishekmuthyam/sample-build.git'
-				//}
-				echo "Config repo Start"
-            }			     
-        }	
+		stage('Checkout SCM') {
+		echo "Start-checkout sample buid"	
+	    	git branch: 'master', credentialsId: 'abhishekmuthyam', url: "https://github.com/abhishekmuthyam/sample-build.git"
+		echo "End-checkout sample buid"	
+			
+		}
 		
 		stage ('Check out and get property file') {
 			steps {
