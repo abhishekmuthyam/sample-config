@@ -8,25 +8,19 @@ pipeline {
 		
 		stage('Checkout SCM') {
 			steps {
-			dir('CalibrationResults') {
-				echo "Start-checkout sample buid"
-        			//git url: 'https://github.com/AtlasBID/CalibrationResults.git'
-				echo "Start-checkout sample buid"	
+			dir('configrepo') {				
+			echo "Start-checkout sample buid"	
 	    		 git branch: 'master', credentialsId: 'abhishekmuthyam', url: "https://github.com/abhishekmuthyam/sample-build.git"
 			 echo "End-checkout sample buid"
-    			}
-			//echo "Start-checkout sample buid"	
-	    		//git branch: 'master', credentialsId: 'abhishekmuthyam', url: "https://github.com/abhishekmuthyam/sample-build.git"
-			//echo "End-checkout sample buid"	
-			}
-			
+    			}	
+			}			
 		} 
 		
 		stage ('Check out and get property file') {
 			steps {
 				echo "start call batch script"
-				bat 'C:/Users/muthyama/build/PCF_CloudService_Script.bat'
-				//bat 'PCF_CloudService_Script.bat'
+				//bat 'C:/Users/muthyama/build/PCF_CloudService_Script.bat'
+				bat 'PCF_CloudService_Script.bat'
 				echo "End call batch script"		
             }			     
         }	
