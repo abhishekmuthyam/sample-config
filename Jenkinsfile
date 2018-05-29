@@ -39,12 +39,12 @@ pipeline {
 						bat "mvn clean compile package -DskipTests"
             }
         } 
-		stage('DEPLOY TO PCF') { 
+	/*	stage('DEPLOY TO PCF') { 
            				 steps {
                					echo "Pivotal Targeted space ${SPACE}"
 						bat "cf login -a ${API_URL} -o ${ORGANIZATION} -s ${SPACE} -u ${USER_NAME} -p ${PASSWORD} --skip-ssl-validation"
 						bat "cf push sample-config"
             }
-        }			
+        }*/			
     }
 }
