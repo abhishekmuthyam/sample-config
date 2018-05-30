@@ -24,7 +24,7 @@ pipeline {
 				echo "End call batch script"		
             }			     
         }	
-       		 stage('compile') {
+       	/*	 stage('compile') {
 				steps {
 					load "${WORKSPACE}\\env.properties"
 					echo "API_URL: ${API_URL}"
@@ -38,7 +38,7 @@ pipeline {
 					steps {
 						echo "Build"
 						bat "mvn clean compile package -DskipTests"
-            }
+            } */
         } 
 	/*	stage('DEPLOY TO PCF') { 
            				 steps {
