@@ -38,7 +38,7 @@ pipeline {
 					steps {
 						echo "Build"
 						bat "mvn clean compile package -DskipTests"
-            } */
+            } 
         } 
 	/*	stage('DEPLOY TO PCF') { 
            				 steps {
