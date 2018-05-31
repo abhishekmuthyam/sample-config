@@ -6,7 +6,7 @@ pipeline {
     }	
     stages {
 		
-		stage('Checkout SCM') {
+		/*stage('Checkout SCM') {
 			steps {
 			dir('configrepo') {				
 			echo "Start-checkout sample buid"	
@@ -14,17 +14,17 @@ pipeline {
 			 echo "End-checkout sample buid"
     			}	
 			}			
-		} 
+		} */
 		
 		stage ('Check out and get property file') {
 			steps {
 				echo "start call batch script"
-				//bat 'C:/Users/muthyama/build/PCF_CloudService_Script.bat'
-				bat 'configrepo/PCF_CloudService_Script.bat'
+				bat 'C:/Users/muthyama/build/PCF_CloudService_Script.bat'
+				//bat 'configrepo/PCF_CloudService_Script.bat'
 				echo "End call batch script"		
             }			     
         }	
-       	/*	 stage('compile') {
+       		 stage('compile') {
 				steps {
 					load "${WORKSPACE}\\env.properties"
 					echo "API_URL: ${API_URL}"
@@ -34,7 +34,7 @@ pipeline {
 				     	echo "SPACE: ${SPACE}"						      
 				}
                         } 
-		stage('Package') { 
+	/*	stage('Package') { 
 					steps {
 						echo "Build"
 						bat "mvn clean compile package -DskipTests"
